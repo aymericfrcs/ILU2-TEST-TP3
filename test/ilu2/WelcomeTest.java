@@ -23,4 +23,9 @@ class WelcomeTest {
 	void wlcmTestUpperCase() {
 		assertEquals(Welcome.welcome("JERRY"), "HELLO, JERRY !");
 	}
+	
+	@Test
+	void wlcmTestTwoNames() {
+		assertEquals(Welcome.welcome("amy,bob"), "Hello, Amy, Bob");
+	}
 }
