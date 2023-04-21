@@ -1,5 +1,7 @@
 package ilu2;
 
+import java.util.Iterator;
+
 public class Welcome {
 	
 	private static String nameWUpperCase(String input) {
@@ -22,11 +24,16 @@ public class Welcome {
 		if (input.toUpperCase().equals(input)) {
 			str.setLength(0);
 			str.append("HELLO, " + input + " !");
+			
 		} else if (noms.length > 1) {
-			str.append(nameWUpperCase(noms[0]).trim() + ", ");
-			str.append(nameWUpperCase(noms[1].trim()));
-		} else {	
+			for (int i = 0; i < noms.length-1; i++) {
+				str.append(nameWUpperCase(noms[i].trim()) + ", ");
+			}
+			str.append(nameWUpperCase(noms[noms.length - 1].trim()));
+			
+		} else {
 			str.append(nameWUpperCase(input));
+			
 		}
 		
 		return str.toString();

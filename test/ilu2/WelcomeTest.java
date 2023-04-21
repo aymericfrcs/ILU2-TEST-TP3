@@ -28,4 +28,10 @@ class WelcomeTest {
 	void wlcmTestTwoNames() {
 		assertEquals(Welcome.welcome("amy,bob"), "Hello, Amy, Bob");
 	}
+	
+	@Test
+	void wlcmTestSeveralNames() {
+		assertEquals(Welcome.welcome("amy,bob,jerry"), "Hello, Amy, Bob, Jerry");
+		assertEquals(Welcome.welcome("amy,bob,jerry,tom,Tom, yazid"), "Hello, Amy, Bob, Jerry, Tom, Tom, Yazid");
+	}
 }
