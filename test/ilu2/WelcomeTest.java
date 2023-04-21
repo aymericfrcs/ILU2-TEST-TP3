@@ -18,4 +18,9 @@ class WelcomeTest {
 		assertEquals(Welcome.welcome(null), "Hello, my friend");
 		assertEquals(Welcome.welcome("  "), "Hello, my friend");
 	}
+	
+	@Test
+	void wlcmTestUpperCase() {
+		assertEquals(Welcome.welcome("JERRY"), "HELLO, JERRY !");
+	}
 }
