@@ -13,9 +13,9 @@ class WelcomeTest {
 		assertEquals(Welcome.welcome("bob"), "Hello, Bob");
 	}
 
-	/*@Test
+	@Test
 	void wlcmTestNullOrEmpty() {
 		assertEquals(Welcome.welcome(null), "Hello, my friend");
 		assertEquals(Welcome.welcome("  "), "Hello, my friend");
-	}*/
+	}
 }
