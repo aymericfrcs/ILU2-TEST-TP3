@@ -34,4 +34,13 @@ class WelcomeTest {
 		assertEquals(Welcome.welcome("amy,bob,jerry"), "Hello, Amy, Bob, Jerry");
 		assertEquals(Welcome.welcome("amy,bob,jerry,tom,Tom, yazid"), "Hello, Amy, Bob, Jerry, Tom, Tom, Yazid");
 	}
+	
+	@Test
+	void wlcmTestSeveralNamesScream() {
+		assertEquals(Welcome.welcome("amy,BOB,jerry"), "Hello, Amy, Jerry. AND HELLO, BOB !");
+		assertEquals(Welcome.welcome("amy,BOB,JERRY"), "Hello, Amy. AND HELLO, BOB, JERRY !");
+		assertEquals(Welcome.welcome("BOB,JERRY,AMY"), "HELLO, BOB, JERRY, AMY !");
+	}
+	
+
 }

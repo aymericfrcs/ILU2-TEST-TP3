@@ -1,6 +1,5 @@
 package ilu2;
 
-import java.util.Iterator;
 
 public class Welcome {
 	
@@ -12,30 +11,60 @@ public class Welcome {
 	public static String welcome(String input) {
 		StringBuilder str = new StringBuilder();
 		
-		str.append("Hello, ");
 		
-		if (input == null || input.trim().equals("")) {
-			str.append("my friend");
+		
+		if (input == null || input.trim().equals("")) { //pas de nom
+			str.append("Hello, my friend");
 			return str.toString();
 		}
 		
 		String[] noms = input.split(",");
+		String[] nomsMaj = new String[noms.length];
+		String[] nomsMin = new String[noms.length];
 		
-		if (input.toUpperCase().equals(input)) {
-			str.setLength(0);
-			str.append("HELLO, " + input + " !");
-			
-		} else if (noms.length > 1) {
-			for (int i = 0; i < noms.length-1; i++) {
-				str.append(nameWUpperCase(noms[i].trim()) + ", ");
+		int j = 0;
+		int k = 0;
+
+		
+		for (int i = 0; i<noms.length; i++) { //tri des noms entre minuscules et majuscules
+			if (noms[i].toUpperCase().equals(noms[i])) {
+				nomsMaj[j] = noms[i].trim();
+				j++;
+			} else {
+				nomsMin[k] = nameWUpperCase(noms[i].trim());
+				k++;
 			}
-			str.append(nameWUpperCase(noms[noms.length - 1].trim()));
+		}
+
+		
+		str.append("Hello, ");
+		
+		for (int i = 0; i < nomsMin.length; i++) { //ajout de la partie minuscule du message
+			if (nomsMin[i] != null) {
+				str.append(nomsMin[i] + ", "); 
+			}
+		}
+		str.setLength(str.length()-2); //on enlève la virgule non nécessaire à la fin du message
+		
+		if (j>0) {
 			
-		} else {
-			str.append(nameWUpperCase(input));
+			if (nomsMin[0] == null) { //si pas de nom en minuscules
+				str.setLength(0);
+				str.append("HELLO, ");
+			} else {
+			str.append(". AND HELLO, ");
+			}
 			
+			for (int i = 0; i < nomsMaj.length; i++) { //ajout de la partie majuscule du message
+				if (nomsMaj[i] != null) {
+					str.append(nomsMaj[i] + ", ");
+				}
+			}
+			str.setLength(str.length()-2); //on enlève la virgule non nécessaire à la fin du message
+			str.append(" !");
 		}
 		
+
 		return str.toString();
 	}
 }
