@@ -10,7 +10,7 @@ public class Welcome {
 
 	public static String welcome(String input) {
 		
-// ------------------------------ TRAVAIL FAIT JUSQU'A L'ITER_7 (EX_7) ------------------------------
+// ------------------------------ TRAVAIL FAIT JUSQU'A L'ITER_8 (EX_8) ------------------------------
 		
 		StringBuilder str = new StringBuilder();
 		

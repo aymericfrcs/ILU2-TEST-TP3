@@ -50,4 +50,12 @@ class WelcomeTest {
 		assertEquals("HELLO, AMY AND BOB !", Welcome.welcome("AMY,BOB"));
 		assertEquals("Hello, Bob and Jerry. AND HELLO, AMY AND JACK !", Welcome.welcome("bob,AMY,JACK,jerry"));
 	}
+	
+	@Test
+	void wlcmTestEspace() {
+		assertEquals("Hello, Bob, Amy and Jerry", Welcome.welcome("bob,             amy,     Jerry         "));
+	}
+	
+	//TRAVAIL FAIT JUSQU'A L'ITER_8 (EX_8)
+	
 }
