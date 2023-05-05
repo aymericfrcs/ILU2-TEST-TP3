@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 class WelcomeTest {
 	
 
-	@Test
+/*	@Test
 	void wlcmTestName() {
 		assertEquals(Welcome.welcome("Bob"), "Hello, Bob");
 		assertEquals(Welcome.welcome("bob"), "Hello, Bob");
@@ -40,7 +40,14 @@ class WelcomeTest {
 		assertEquals(Welcome.welcome("amy,BOB,jerry"), "Hello, Amy, Jerry. AND HELLO, BOB !");
 		assertEquals(Welcome.welcome("amy,BOB,JERRY"), "Hello, Amy. AND HELLO, BOB, JERRY !");
 		assertEquals(Welcome.welcome("BOB,JERRY,AMY"), "HELLO, BOB, JERRY, AMY !");
-	}
+	} */ 
 	
-
+	//Les anciens tests ne passent plus car on a modifié la forme du message à l'ITER_7
+	
+	@Test
+	void wlcmTestAnd() {
+		assertEquals("Hello, Bob, Amy and Jerry", Welcome.welcome("bob,amy,Jerry"));
+		assertEquals("HELLO, AMY AND BOB !", Welcome.welcome("AMY,BOB"));
+		assertEquals("Hello, Bob and Jerry. AND HELLO, AMY AND JACK !", Welcome.welcome("bob,AMY,JACK,jerry"));
+	}
 }

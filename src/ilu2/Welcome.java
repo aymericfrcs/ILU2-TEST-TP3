@@ -9,6 +9,9 @@ public class Welcome {
 	}
 
 	public static String welcome(String input) {
+		
+// ------------------------------ TRAVAIL FAIT JUSQU'A L'ITER_7 (EX_7) ------------------------------
+		
 		StringBuilder str = new StringBuilder();
 		
 		
@@ -39,14 +42,18 @@ public class Welcome {
 		
 		str.append("Hello, ");
 		
-		for (int i = 0; i < nomsMin.length; i++) { //ajout de la partie minuscule du message
-			if (nomsMin[i] != null) {
-				str.append(nomsMin[i] + ", "); 
+		for (int i = 0; i < k; i++) { //ajout de la partie minuscule du message
+			
+			if (i == k-1) {
+				str.setLength(str.length()-2);
+				str.append(" and "); // suppression de la virgule et remplacement par "and"
 			}
+			str.append(nomsMin[i] + ", "); 
+
 		}
 		str.setLength(str.length()-2); //on enlève la virgule non nécessaire à la fin du message
 		
-		if (j>0) {
+		if (j>0) { //si des noms en majuscules ont été donnés
 			
 			if (nomsMin[0] == null) { //si pas de nom en minuscules
 				str.setLength(0);
@@ -55,10 +62,14 @@ public class Welcome {
 			str.append(". AND HELLO, ");
 			}
 			
-			for (int i = 0; i < nomsMaj.length; i++) { //ajout de la partie majuscule du message
-				if (nomsMaj[i] != null) {
-					str.append(nomsMaj[i] + ", ");
+			for (int i = 0; i < j; i++) { //ajout de la partie majuscule du message
+					
+				if (i == j-1) {
+					str.setLength(str.length()-2);
+					str.append(" AND "); // suppression de la virgule et remplacement par "and"
 				}
+				str.append(nomsMaj[i] + ", ");
+				
 			}
 			str.setLength(str.length()-2); //on enlève la virgule non nécessaire à la fin du message
 			str.append(" !");
