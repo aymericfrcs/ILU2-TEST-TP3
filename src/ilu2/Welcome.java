@@ -44,7 +44,7 @@ public class Welcome {
 		
 		for (int i = 0; i < k; i++) { //ajout de la partie minuscule du message
 			
-			if (i == k-1) {
+			if (k > 1 && i == k-1) {
 				str.setLength(str.length()-2);
 				str.append(" and "); // suppression de la virgule et remplacement par "and"
 			}
@@ -64,7 +64,7 @@ public class Welcome {
 			
 			for (int i = 0; i < j; i++) { //ajout de la partie majuscule du message
 					
-				if (i == j-1) {
+				if (j > 1 && i == j-1) {
 					str.setLength(str.length()-2);
 					str.append(" AND "); // suppression de la virgule et remplacement par "and"
 				}
